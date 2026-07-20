@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.cappielloantonio.tempo.R;
 import com.cappielloantonio.tempo.databinding.DialogRatingBinding;
 import com.cappielloantonio.tempo.util.Constants;
+import com.cappielloantonio.tempo.util.Preferences;
 import com.cappielloantonio.tempo.viewmodel.RatingViewModel;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -25,6 +26,8 @@ public class RatingDialog extends DialogFragment {
         bind = DialogRatingBinding.inflate(getLayoutInflater());
         ratingViewModel = new ViewModelProvider(requireActivity()).get(RatingViewModel.class);
 
+
+
         return new MaterialAlertDialogBuilder(getActivity())
                 .setView(bind.getRoot())
                 .setTitle(R.string.rating_dialog_title)
@@ -37,6 +40,10 @@ public class RatingDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
 
+        if (Preferences.rateOutOf10()) {
+            bind.ratingBar.setMax(10);
+            bind.ratingBar.setNumStars(10);
+        }
         setElementInfo();
         setRating();
     }

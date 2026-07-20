@@ -97,6 +97,33 @@
             tools:visibility="visible" />
 
         <LinearLayout
+            android:id="@+id/numeric_rating_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preferred_icon"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@+id/numeric_star_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_star" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/rating_bar_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

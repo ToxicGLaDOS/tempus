@@ -78,6 +78,7 @@ object Preferences {
     private const val HOME_SECTOR_LIST = "home_sector_list"
     private const val SONG_RATING_PER_ITEM = "song_rating_per_item"
     private const val RATING_PER_ITEM = "rating_per_item"
+    private const val RATE_OUT_OF_10 = "rate_out_of_10"
     private const val NEXT_UPDATE_CHECK = "next_update_check"
     private const val GITHUB_UPDATE_CHECK = "github_update_check"
     private const val CONTINUOUS_PLAY = "continuous_play"
@@ -699,6 +700,11 @@ object Preferences {
     @JvmStatic
     fun showItemStarRating(): Boolean {
         return App.getInstance().preferences.getBoolean(SONG_RATING_PER_ITEM, false)
+    }
+
+    @JvmStatic
+    fun rateOutOf10(): Boolean {
+        return App.getInstance().preferences.getBoolean(RATE_OUT_OF_10, false)
     }
 
     @JvmStatic

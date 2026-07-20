@@ -101,6 +101,12 @@
             android:key="song_rating_per_item" />
 
         <SwitchPreference
+            android:title="@string/settings_10_star_rating"
+            android:defaultValue="false"
+            android:summary="@string/settings_10_star_rating_summary"
+            android:key="rate_out_of_10" />
+
+        <SwitchPreference
             android:title="@string/settings_track_number"
             android:defaultValue="false"
             android:summary="@string/settings_track_number_summary"

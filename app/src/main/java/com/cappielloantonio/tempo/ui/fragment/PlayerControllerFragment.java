@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -712,6 +713,11 @@ public class PlayerControllerFragment extends Fragment {
 
                     return true;
                 });
+
+                if (Preferences.rateOutOf10()) {
+                    songRatingBar.setMax(10);
+                    songRatingBar.setNumStars(10);
+                }
 
                 Integer currentRating = media.getUserRating();
 

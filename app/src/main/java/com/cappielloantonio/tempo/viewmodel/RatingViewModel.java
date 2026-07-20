@@ -12,6 +12,7 @@ import com.cappielloantonio.tempo.repository.SongRepository;
 import com.cappielloantonio.tempo.subsonic.models.AlbumID3;
 import com.cappielloantonio.tempo.subsonic.models.ArtistID3;
 import com.cappielloantonio.tempo.subsonic.models.Child;
+import com.cappielloantonio.tempo.util.Preferences;
 
 public class RatingViewModel extends AndroidViewModel {
     private final SongRepository songRepository;
